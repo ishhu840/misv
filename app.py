@@ -28,7 +28,7 @@ df =  pd.read_excel(
     sheet_name='cases',
     skiprows= 0,
     usecols='A:N',
-    nrows=10000,
+    nrows=20000,
 )
 #print(df)
 #st.dataframe(df)
