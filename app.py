@@ -24,11 +24,11 @@ st.markdown(hide_st_style, unsafe_allow_html=True)
 
 #st.title('Uber pickups in NYC')
 df =  pd.read_excel(
-    io="2023final.xlsx",
+    io="2021-23.xlsx",
     sheet_name='cases',
     skiprows= 0,
     usecols='A:N',
-    nrows=20000,
+    nrows=10000,
 )
 #print(df)
 #st.dataframe(df)
@@ -47,12 +47,7 @@ hrcat = st.sidebar.multiselect(
 
 )
 
-# hrsubcat = st.sidebar.multiselect(
-#     "Select the HR Sub Cat:",
-#     options=df["HRSubCat"].unique(),
-#     default=df["HRSubCat"].unique()
 
-# )
 
 df_selection = df.query(
     "State == @state & HRCat == @hrcat"
@@ -82,7 +77,7 @@ with middle_column:
 
   #  st.subheader(f"{total_vic}")
     st.subheader(" :mens: Male Victim : "f"{total_maleV}")
-    st.subheader(":womens:Female Victim : "f"{total_femaleV}")
+    st.subheader(" :womens: Female Victim : "f"{total_femaleV}")
   
 
 with right_column :
